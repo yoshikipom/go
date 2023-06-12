@@ -6,6 +6,8 @@ import (
 	"net/http"
 	"strings"
 
+	"github.com/labstack/gommon/log"
+
 	"github.com/aws/aws-sdk-go/aws"
 	"github.com/aws/aws-sdk-go/aws/session"
 	"github.com/aws/aws-sdk-go/service/s3"
@@ -15,7 +17,7 @@ import (
 
 var awsConfig = &aws.Config{
 	Region:                        aws.String("us-east-1"),
-	Endpoint:                      aws.String("http://localstack:4566"),
+	Endpoint:                      aws.String("http://localhost:4566"),
 	S3ForcePathStyle:              aws.Bool(true),
 	CredentialsChainVerboseErrors: aws.Bool(true),
 }
@@ -33,6 +35,9 @@ func bodyDumpHandler(c echo.Context, reqBody, resBody []byte) {
 func main() {
 	e := echo.New()
 
+	if l, ok := e.Logger.(*log.Logger); ok {
+		l.SetHeader("${time_rfc3339} ${level}")
+	}
 	e.Use(middleware.Logger())
 	e.Use(middleware.Recover())
 	e.Use(middleware.BodyDump(bodyDumpHandler))

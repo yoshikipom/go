@@ -4,15 +4,13 @@ go 1.19
 
 require (
 	github.com/aws/aws-sdk-go v1.44.226
-	github.com/aws/aws-sdk-go-v2 v1.17.7
 	github.com/labstack/echo/v4 v4.10.2
+	github.com/labstack/gommon v0.4.0
 )
 
 require (
-	github.com/aws/smithy-go v1.13.5 // indirect
 	github.com/golang-jwt/jwt v3.2.2+incompatible // indirect
 	github.com/jmespath/go-jmespath v0.4.0 // indirect
-	github.com/labstack/gommon v0.4.0 // indirect
 	github.com/mattn/go-colorable v0.1.13 // indirect
 	github.com/mattn/go-isatty v0.0.17 // indirect
 	github.com/valyala/bytebufferpool v1.0.0 // indirect

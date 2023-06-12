@@ -1,0 +1,7 @@
+POST http://localhost:8080/post
+Content-Type: application/json
+
+{
+    "name": "file-name",
+    "content": "content-content"
+}
