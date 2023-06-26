@@ -1,0 +1,30 @@
+### GET
+GET http://localhost:8080/pets
+
+
+### POST
+POST http://localhost:8080/pets
+Content-Type: application/json
+
+{
+    "name": "Alice",
+    "tag": "test"
+}
+
+### GET one
+GET http://localhost:8080/pets/1000
+
+### DELETE
+DELETE http://localhost:8080/pets/1000
+
+### POST
+POST http://localhost:8080/pets
+Content-Type: application/json
+
+{
+    "name": "Alice",
+    "tag": "test2"
+}
+
+### GET
+GET http://localhost:8080/pets?tags=test2&tags=test
