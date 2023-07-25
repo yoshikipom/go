@@ -1,0 +1,12 @@
+### Accessible endpoint without authn
+GET http://localhost:1323
+
+
+### login
+POST http://localhost:1323/login
+Content-Type: application/x-www-form-urlencoded
+
+username=yoshiki&password=shhh!
+### Access to restricted page with JWT
+GET http://localhost:1323/restricted
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoieW9zaGlraXBvbSIsImFkbWluIjp0cnVlLCJleHAiOjE2OTA1Mjc0MjJ9.CvoNl5GdKdvCG0GyALBtlXj7GEapKdOKHORi-DRwn7g
