@@ -2,17 +2,12 @@ package main
 
 import (
 	"fmt"
-
-	"github.com/yoshikipom/json-masking-go/masking"
 )
 
 func main() {
-	config := masking.MaskingConfig{
-		DeniedKeyList: []string{"name"},
+	rows := []struct{ index int }{{index: 0}, {index: 1}, {index: 2}}
+	for i, _ := range rows {
+		rows[i].index += 10
 	}
-	m := masking.New(&config)
-
-	input := `{"key":"value","name":"John"}`
-	output := m.Replace([]byte(input))
-	fmt.Println(string(output))
+	fmt.Printf("%v", rows)
 }
